@@ -1,0 +1,25 @@
+<form [formGroup]="tacheForm" (ngSubmit)="onSubmit()">
+  <mat-form-field
+    class="example-full-width mx-2"
+    appearance="fill"
+    *ngIf="status === STATUS.MODIFICATION"
+  >
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="id" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width mr-2" appearance="fill">
+    <mat-label>label</mat-label>
+    <input matInput formControlName="label" />
+  </mat-form-field>
+  <mat-checkbox formControlName="complete"> complete </mat-checkbox>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="button" class="btn btn-secondaryv mr-2" (click)="annuler()">
+        Annuler
+      </button>
+      <button type="submit" class="btn btn-primary">
+        {{ labelBtnSubmit }}
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,4 +1,6 @@
-# AngularTestKeyConsulting
+# Angular-gestion-tache
+
+Pour le bon fonctionnement de l'application veuiller lancer le projet back associer : https://github.com/felule/JavaTestGestionTache
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
