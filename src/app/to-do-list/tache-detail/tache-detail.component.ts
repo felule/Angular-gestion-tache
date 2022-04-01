@@ -1,5 +1,10 @@
 import { GestionTacheService } from './../../shared/services/gestion-tache.service';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tache } from 'src/app/shared/model/tache.model';
@@ -27,7 +32,10 @@ export class TacheDetailComponent implements OnInit {
     this.status = this.activatedRoute.snapshot.data['status'];
 
     this.tacheForm = this.fb.group({
-      label: [{ value: '', disabled: this.status === STATUS.MODIFICATION }],
+      label: [
+        { value: '', disabled: this.status === STATUS.MODIFICATION },
+        [Validators.required],
+      ],
       complete: [],
     });
 
